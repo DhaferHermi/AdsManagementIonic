@@ -1,0 +1,28 @@
+<ion-header>
+  <ion-toolbar>
+    <ion-title>Create New Ad</ion-title>
+  </ion-toolbar>
+</ion-header>
+
+<ion-content>
+  <form #newAd="ngForm">
+    <ion-item>
+      <ion-label position="floating">Owner</ion-label>
+      <ion-input ngModel type="text" name="owner"></ion-input>
+    </ion-item>
+    <ion-item>
+      <ion-label position="floating">Title</ion-label>
+      <ion-input ngModel type="text" name="title"></ion-input>
+    </ion-item>
+    <ion-item>
+      <ion-label position="floating">Detail</ion-label>
+      <ion-input ngModel type="text" name="detail"></ion-input>
+    </ion-item>
+    <ion-item>
+      <ion-label position="floating">Price</ion-label>
+      <ion-input ngModel type="text" name="price"></ion-input>
+    </ion-item>
+
+    <ion-button color="primary" expand="block" (click)="addNewAd(newAd.value)">Create New Ad</ion-button>
+  </form>
+</ion-content>

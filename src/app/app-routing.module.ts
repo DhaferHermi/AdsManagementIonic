@@ -11,6 +11,18 @@ const routes: Routes = [
     redirectTo: 'home',
     pathMatch: 'full'
   },
+  {
+    path: 'ad-detail/:id',
+    loadChildren: () => import('./ad-detail/ad-detail.module').then( m => m.AdDetailPageModule)
+  },
+  {
+    path: 'add-ad',
+    loadChildren: () => import('./add-ad/add-ad.module').then( m => m.AddAdPageModule)
+  },
+  {
+    path: 'login',
+    loadChildren: () => import('./login/login.module').then( m => m.LoginPageModule)
+  },
 ];
 
 @NgModule({

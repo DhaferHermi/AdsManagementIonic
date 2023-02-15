@@ -1,0 +1,20 @@
+<ion-header>
+  <ion-toolbar>
+    <ion-buttons slot="start">
+      <ion-back-button defaultHref="home"></ion-back-button>
+    </ion-buttons>
+    <ion-title>{{ad.title}}</ion-title>
+  </ion-toolbar>
+</ion-header>
+
+<ion-content>
+<ion-card>
+  <ion-card-header>
+    <ion-card-subtitle>Ad by: {{ad.owner}}</ion-card-subtitle>
+    <ion-card-title>Details:<br>{{ad.details}}</ion-card-title>
+  </ion-card-header>
+  <ion-card-content >
+      Price: {{ad.price}}dt
+  </ion-card-content>
+</ion-card>
+</ion-content>
