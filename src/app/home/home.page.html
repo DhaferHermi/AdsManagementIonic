@@ -6,7 +6,7 @@
       </ion-button>
     </ion-buttons>
     <ion-title>
-      Ads Management ({{user.username}})
+      Ads Management ({{user.username}}) <a routerLink="/my-ads">my ads</a>
     </ion-title>
   </ion-toolbar>
 </ion-header>
@@ -29,16 +29,6 @@
       <ion-button [routerLink]="['/ad-detail', ad.id]">
         more
       </ion-button>
-    </ion-item>
-  </ion-list>
-  <ion-list class="ion-margin">
-    <ion-list-header>
-      <ion-label>User Ads List</ion-label>
-    </ion-list-header>
-    <ion-item *ngFor="let userAd of userAds">
-      <ion-label>
-        {{userAd.title}}
-      </ion-label>
     </ion-item>
   </ion-list>
 </ion-content>

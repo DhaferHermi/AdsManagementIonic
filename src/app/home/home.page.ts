@@ -19,9 +19,7 @@ export class HomePage {
     this.user = this.listAds.getUser();
     if(this.user['username']=== undefined)
       this.router.navigateByUrl('/login');
-    console.log(this.user['username']);
     this.ads = this.listAds.getAllAds();
-    this.userAds = this.ads.filter(ad => ad.owner == this.user['username']);
   }
   logout(): void{
     this.listAds.connect('');

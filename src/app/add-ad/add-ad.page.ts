@@ -8,15 +8,20 @@ import { AdsListService } from '../ads-list.service';
   styleUrls: ['./add-ad.page.scss'],
 })
 export class AddAdPage implements OnInit {
-
+  user;
   constructor(
     private listAds: AdsListService,
-    private router: Router,    ) { }
+    private router: Router) { }
 
-  ngOnInit() {
+  ngOnInit(): void {
+    this.user = this.listAds.getUser();
+    if (this.user['username'] === undefined)
+      this.router.navigateByUrl('/login');
+    this.user = this.listAds.getUser();
   }
 
   addNewAd(valueForm) {
+    valueForm['owner'] = this.user['username'];
     this.listAds.addAd(valueForm);
     this.router.navigateByUrl('/home');
   }

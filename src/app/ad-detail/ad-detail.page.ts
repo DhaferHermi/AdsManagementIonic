@@ -10,14 +10,17 @@ import { AdsListService } from '../ads-list.service';
 export class AdDetailPage implements OnInit {
 
   ad ;
+  user;
   constructor(
     private listAds: AdsListService,
-    private router: Router,    
     private activatedRoute: ActivatedRoute,
-    ) { }
-
-  ngOnInit() {
+    private router: Router) {}
+ 
+  ngOnInit(): void {
+    this.user = this.listAds.getUser();
+    if(this.user['username']=== undefined)
+      this.router.navigateByUrl('/login');
     this.ad = this.listAds.getAdById(this.activatedRoute.snapshot.paramMap.get('id'));
   }
 
-}
+} 

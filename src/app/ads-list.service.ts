@@ -26,6 +26,11 @@ export class AdsListService {
     return this.AdsList;
   }
 
+  getMyAds() {
+    return this.AdsList.filter(ad => ad.owner == this.user['username']);
+
+  }
+
   getAdById(id) {
     return this.AdsList.find((c) => c.id == id);
   }
@@ -39,8 +44,6 @@ export class AdsListService {
 
   connect(user):Boolean{
     var found = false;
-    
-    console.log('here', user['username'] );
     if( this.users.indexOf(user['username']) !== -1){
       this.user = user;
       found = true}
