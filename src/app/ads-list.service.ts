@@ -5,10 +5,11 @@ import { Injectable } from '@angular/core';
 })
 export class AdsListService {
   private user = '';
+  private users = ['dhafer', 'dhafer2'];
   private AdsList = [
     {
       id: 1,
-      owner: 'Dhafer',
+      owner: 'dhafer',
       title: '1st Ad',
       details:'1st Ad Details',
       price: '100',
@@ -36,12 +37,25 @@ export class AdsListService {
     this.AdsList.push(newAd);
   }
 
-  connect(user){
-    this.user = user;
+  connect(user):Boolean{
+    var found = false;
+    
+    console.log('here', user['username'] );
+    if( this.users.indexOf(user['username']) !== -1){
+      this.user = user;
+      found = true}
+    else{
+      this.user = '';
+    }
+    return found;
   }
 
   getUser(){
     return this.user;
+  }
+
+  signup(newUser){
+    this.users.push(newUser);
   }
 
   constructor() { }

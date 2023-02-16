@@ -18,7 +18,7 @@ export class LoginPage implements OnInit {
   }
   
   connect(valueForm) {
-    this.listAds.connect(valueForm);
+    if(this.listAds.connect(valueForm))
     this.router.navigateByUrl('/home');
   }
 }

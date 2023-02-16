@@ -1,17 +1,16 @@
 <ion-header>
   <ion-toolbar>
-    <ion-title>login</ion-title>
+    <ion-title>Sign Up</ion-title>
   </ion-toolbar>
 </ion-header>
 
 <ion-content>
-  <form #user="ngForm">
+
+  <form #newUser="ngForm">
     <ion-item>
       <ion-label position="floating">Username</ion-label>
       <ion-input ngModel type="text" name="username"></ion-input>
     </ion-item>
-    <ion-button color="primary" expand="block" (click)="connect(user.value)">Log-in</ion-button>
+    <ion-button color="primary" expand="block" (click)="signup(newUser.value)">Sign Up</ion-button>
   </form>
-  <ion-title>not a user? <a routerLink="/signup"> signup</a></ion-title>
-
 </ion-content>
